@@ -1,0 +1,41 @@
+print ("welcome to omnipar! ==v1.0.0==")
+import time
+def set_timer():
+    timer = int(input("Enter time in minutes: "))
+    print(f"Timer set for {timer} minutes.")
+    time.sleep(timer*60)
+    print("Timer done.")
+
+def convert_units(amount, unit):
+    if unit == "tsp":
+        return amount * 5
+    elif unit == "tbsp":
+        return amount * 15
+    elif unit == "oz":
+        return amount * 28
+    elif unit == "lb":
+        return amount * 454
+    else:
+        return amount
+
+print("welcome to your cooking assistant!")
+
+while True:
+    print("What can I help you with? Choose an option:")
+    print("1. Set a timer.")
+    print("2. Convert units.")
+    print("3. Quit.")
+    choice = input("> ")
+
+    if choice == "1":
+        set_timer()
+    elif choice == "2":
+        amount = float(input("Enter amount: "))
+        unit = input("Enter unit (tsp, tbsp, oz, lb): ")
+        converted_amount = convert_units(amount, unit)
+        print(f"{amount} {unit} is {converted_amount} grams.")
+    elif choice == "3":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
